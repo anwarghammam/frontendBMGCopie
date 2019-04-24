@@ -1,0 +1,118 @@
+
+  <div class="container">
+   <div class="row">
+      <div class="col-3">
+
+
+       </div>
+       <div *ngIf="!clicked" class="col-6">
+
+          <h1> <strong>our summer events </strong></h1>
+       </div>
+     <div class="col-3">
+
+</div>
+
+   </div>
+
+
+ <a href="/addevent"><button *ngIf="!clicked"class="btn btn-danger" md-raised-button >Add Entry</button></a>
+<div class="row">
+  <div class=col-1> </div>
+  <div class=col *ngIf="!clicked" > 
+<mgl-timeline  [side]="side">
+  <mgl-timeline-entry *ngFor="let entry of entries; let i = index;">
+    <mgl-timeline-entry-header >
+      <div>{{entry.nom}}  <button *ngIf="admin" class="close" (click)="removeEntry(i)"> <span aria-hidden="true">&times;</span></button></div>
+    </mgl-timeline-entry-header>
+    <mgl-timeline-entry-content>
+      
+                 
+              <div class="card" style="width: 30rem;">
+                  <img src="https://i.pinimg.com/736x/64/91/25/649125388bf1cee4237d4e879f3807e4--ain-tunis.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+    
+                     <div class="container">
+                        <h5 class="card-title"> <strong>  <i class="now-ui-icons education_paper"></i>  {{entry.nom}}</strong></h5>
+                    <h5 class="card-text"> <strong> <i class="now-ui-icons objects_spaceship"></i> {{entry.description}} </strong></h5> 
+                     
+                    <div class="row">
+                        <div class=col>
+                             <strong>  <i class="now-ui-icons business_money-coins"></i>  prix :</strong> {{entry.prix}}
+                        </div>
+                       </div>
+                       <div class="row">
+                         <div class=col>
+                              <strong>  <i class="now-ui-icons location_world"></i>     region:</strong> {{entry.region}}
+                         </div>
+                        </div> 
+                         <div class=row>
+                         <div class=col>
+                            <strong>  <i class="now-ui-icons design_bullet-list-67"></i>     nombres de places:</strong>  {{entry.nbre_de_place}}
+                          </div>
+                          </div>
+                          <div class=row>
+                          <div class=col>
+                             
+                              <strong>    <i class="now-ui-icons users_circle-08" data-toggle="modal" data-target="#exampleModal"></i>     nombre de participants:</strong>   {{entry.participants.length}}
+                            </div>
+                            </div>
+                          </div>
+                       </div>   
+                       <button class="btn btn-success" (click)="onclick(i)">  <i class="now-ui-icons users_single-02"></i> participer </button>
+                       <!-- Button trigger modal -->
+
+                        <!-- Modal -->
+                        
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> <strong>{{entry.nom}} ' participants</strong></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+       <div class="row">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRcdXnz_yoZC8pA6PPlHuDIRaSTXXIRGf0074FNEWo9o7estz-" style="width:70px;height:70px">
+          
+       </div> 
+       <div class="row">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRcdXnz_yoZC8pA6PPlHuDIRaSTXXIRGf0074FNEWo9o7estz-" style="width:70px;height:70px">
+          
+        </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+               
+                
+               </div>
+              
+                  
+        
+       
+        
+                      
+                    
+      
+    </mgl-timeline-entry-content>
+    <mgl-timeline-entry-dot class="counter"
+                            (click)="onDotClick($event)"></mgl-timeline-entry-dot>
+    <mgl-timeline-entry-side><strong>  <i class="now-ui-icons ui-2_time-alarm"></i>{{entry.date_deb}}</strong> </mgl-timeline-entry-side>
+  </mgl-timeline-entry>
+</mgl-timeline>
+
+  </div>
+ 
+  </div>
+  
+  <app-event-details *ngIf="clicked" [entry]=entry></app-event-details>
+  

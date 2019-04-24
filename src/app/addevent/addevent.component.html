@@ -1,0 +1,88 @@
+
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+	
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form [formGroup]="addevent" (ngSubmit)="onSubmit()" #f="ngForm">
+          <h1>add event</h1>
+        <div class="form-group">
+          <label for="nom">nom</label>
+          <input type="text" id="nom" placeholder="nom de l'evenement" formControlName="nom" class="form-control" [formControl]="nom" name="nom">
+      
+      </div>
+      <div class="form-group">
+        <label for="prix">prix</label>
+        <input type="number" class="form-control" id="prix" placeholder="prix" formControlName="prix" [formControl]="prix" name="prix">
+      </div>
+      <div class="form-group">
+        <label for="region">region</label>
+        <input type="text" class="form-control" id="region" placeholder="region" formControlName="region" [formControl]="region" name="region">
+      </div>
+      <div class="form-group">
+        <label for="description">description</label>
+        <input type="text" class="form-control" id="description" placeholder="description" formControlName="description" [formControl]="description" name="description">
+      </div>
+      <div class="form-group">
+        <label for="nbre_de_place">nbre_de_place</label>
+        <input type="text" class="form-control" id="nbre_de_place" placeholder="nbre_de_place" formControlName="nbre_de_place" [formControl]="nbre_de_place" name="nbre_de_place">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="date_deb">date_deb</label>
+          <input type="date" class="form-control" id="date_deb" formControlName="date_deb" [formControl]="date_deb" name="date_deb">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="date_fin">date fin</label>
+          
+          <input type="date" class="form-control" id="date_fin" formControlName="date_fin" class="form-control" [formControl]="date_fin" name="date_fin">
+        </div>
+    
+      </div>
+    
+      <button type="submit" class="btn btn-primary">add event</button>
+    </form>
+    
+    
+				
+			</div>
+		</div>
+		
+		
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+</html>

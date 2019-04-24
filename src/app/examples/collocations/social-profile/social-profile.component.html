@@ -1,0 +1,61 @@
+
+
+<br>
+<br>
+<div class="container">
+    <header>
+      <i class="fa fa-bars"  [routerLink]="['/collocation']" aria-hidden="true"></i>
+    </header>
+    <div class="m">
+      <div class="row">
+        <div class="left col-lg-4">
+          <div class="photo-left">
+            <img class="photo" src={{user.photo_de_profil}}/>
+            <div class="active" *ngIf="connected"></div>
+          </div>
+          <h4 class="name">{{user.nom}} {{user.prenom}}</h4>
+          <p class="info">software engineer</p>
+          <p class="info">{{user.email}}</p>
+          <p class="info">{{user.tel}}</p>
+          <div class="stats row">
+            <div class="stat col-xs-4" style="padding-right: 50px;">
+              <p class="number-stat">{{user.followers}}</p>
+              <p class="desc-stat">Followers</p>
+            </div>
+            <div class="stat col-xs-4">
+              <p class="number-stat">{{user.following}} </p>
+              <p class="desc-stat">Following</p>
+            </div>
+            <div class="stat col-xs-4" style="padding-left: 50px;">
+              <p class="number-stat">38</p>
+              <p class="desc-stat">Uploads</p>
+            </div>
+          </div>
+          <strong>BIO:</strong>
+          <p class="w3-center" *ngIf="sexe=='femme'"><img src="https://previews.123rf.com/images/artemstepanov/artemstepanov1606/artemstepanov160600109/57845256-vector-visage-f%C3%A9minin-avatar-logo-mod%C3%A8le-pictogramme-bouton-ic%C3%B4ne-plat-rond-%C3%A0-la-mode-avec-des-femmes-d-af.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+          <p class="w3-center"  *ngIf="sexe=='homme'"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNA0w1g-bbonjljcofnJ49SMhBTvpNBfxYD4zoNkQGE8ngMmXS" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+          <p class="desc">Hi ! My name is {{user.nom}} {{user.prenom}}. I'm a software enginner . I really enjoy participating in BMG events. thank you bmg for such an a</p>
+        </div>
+        <div class="right col-lg-8">
+          <ul class="nav">
+            <li>Gallery</li>
+          </ul>
+          <span class="follow" (click)="addfollow(user.id)" *ngIf="!follow">Follow</span>
+          <span class="follow" (click)="follow=false" *ngIf="follow"> <i class="fa fa-check" aria-hidden="true"></i> contact</span>
+        
+
+          <div class="row gallery">
+            <div class="col-md-4" *ngFor="let photo of user.galerie ;">
+              <img src={{photo}}/>
+            </div>
+            
+            <div class="col-md-4">
+              <img src="http://static.asiawebdirect.com/m/bangkok/portals/bali-indonesia-com/homepage/activities/cycling/allParagraphs/BucketComponent/ListingContainer/03/image/jatiluwih-cycling.jpg"/>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+
+  
